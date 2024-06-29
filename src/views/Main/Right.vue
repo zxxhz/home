@@ -49,6 +49,9 @@ const siteUrl = computed(() => {
     &:active {
       transform: scale(0.95);
     }
+    @media (max-width: 390px) {
+      width: 391px;
+    }
     @media (min-width: 720px) {
       display: none;
     }
@@ -58,6 +61,9 @@ const siteUrl = computed(() => {
     width: 100%;
     &.hidden {
       display: none;
+    }
+    .logo {
+      width: calc(100% + 6px);
     }
   }
 }
