@@ -13,16 +13,17 @@
           {{ fullYear }}
           <a :href="siteUrl">{{ siteAuthor }}</a>
         </span>
+        <!-- made by 信息转移到了`ProjInfo`模块中了 -->
         <!-- 以下信息请不要修改哦 -->
-        <span class="hidden">
-          &amp;&nbsp;Made&nbsp;by
+        <!-- <span class="hidden">
+          &nbsp;|&nbsp;&nbsp;Made&nbsp;by
           <a :href="config.github" target="_blank">
             {{ config.author }}
           </a>
-        </span>
+        </span> -->
         <!-- 站点备案 -->
         <span>
-          &amp;
+          &nbsp;|&nbsp;
           <a v-if="siteIcp" href="https://beian.miit.gov.cn" target="_blank">
             {{ siteIcp }}
           </a>
@@ -44,7 +45,7 @@
 <script setup>
 import { MusicOne } from "@icon-park/vue-next";
 import { mainStore } from "@/store";
-import config from "@/../package.json";
+// import config from "@/../package.json";
 
 const store = mainStore();
 const fullYear = new Date().getFullYear();

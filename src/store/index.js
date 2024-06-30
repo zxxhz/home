@@ -25,6 +25,8 @@ export const mainStore = defineStore("main", {
       playerAutoplay: false, // 是否自动播放
       playerLoop: "all", // 循环播放 "all", "one", "none"
       playerOrder: "list", // 循环顺序 "list", "random"
+      madeByIsOpen: false, // made by 是否开启
+      madeByIsHover: false, // made by 是否光标悬浮
     };
   },
   getters: {

@@ -5,7 +5,7 @@
   <Background @loadComplete="loadComplete" />
   <!-- 主界面 -->
   <Transition name="fade" mode="out-in">
-    <main id="main" v-if="store.imgLoadStatus">
+    <main id="main" v-if="store.imgLoadStatus" @click="screenClick">
       <div class="container" v-show="!store.backgroundShow">
         <section class="all" v-show="!store.setOpenState">
           <MainLeft />
@@ -25,6 +25,15 @@
       >
         <component :is="store.mobileOpenState ? CloseSmall : HamburgerButton" />
       </Icon>
+      <!-- Mode by 申明列表 -->
+      <Transition name="fade" mode="out-in">
+        <div class="made-by">
+          <ProjInfo @click.stop
+            :class="'mb-base mb-' + (store.madeByIsOpen ? 'on' : (store.madeByIsHover ? 'mid' : 'off'))" 
+          />
+          <div class="mb-tip">👈 点击展开</div>
+        </div>
+      </Transition>
       <!-- 页脚 -->
       <Transition name="fade" mode="out-in">
         <Footer class="f-ter" v-show="!store.backgroundShow && !store.setOpenState" />
@@ -47,8 +56,18 @@ import Box from "@/views/Box/index.vue";
 import MoreSet from "@/views/MoreSet/index.vue";
 import cursorInit from "@/utils/cursor.js";
 import config from "@/../package.json";
+import { logInfos, currentInfo as cInfo } from "@/utils/updateInfo.js";
+import ProjInfo from "@/components/ProjInfo.vue";
 
 const store = mainStore();
+
+// 接收全屏点击 可以处理非自身点击事件
+const screenClick = () => {
+  // 通过点击传递 点击非madeBy区域 关闭madeBy
+  if (store.madeByIsOpen) {
+    store.madeByIsOpen = false;
+  }
+};
 
 // 页面宽度
 const getWidth = () => {
@@ -106,19 +125,7 @@ onMounted(() => {
   window.addEventListener("resize", getWidth);
 
   // 控制台输出
-  const styleTitle1 = "font-size: 20px;font-weight: 600;color: rgb(244,167,89);";
-  const styleTitle2 = "font-size:12px;color: rgb(244,167,89);";
-  const styleContent = "color: rgb(30,152,255);";
-  const title1 = "無名の主页";
-  const title2 = `
- _____ __  __  _______     ____     __
-|_   _|  \\/  |/ ____\\ \\   / /\\ \\   / /
-  | | | \\  / | (___  \\ \\_/ /  \\ \\_/ /
-  | | | |\\/| |\\___ \\  \\   /    \\   /
- _| |_| |  | |____) |  | |      | |
-|_____|_|  |_|_____/   |_|      |_|`;
-  const content = `\n\n版本: ${config.version}\n主页: ${config.home}\nGithub: ${config.github}`;
-  console.info(`%c${title1} %c${title2} %c${content}`, styleTitle1, styleTitle2, styleContent);
+  logInfos();
 });
 
 onBeforeUnmount(() => {
@@ -190,6 +197,66 @@ onBeforeUnmount(() => {
       display: none;
     }
   }
+  .made-by {
+    position: absolute;
+    top: calc(100% - 46px);
+    display: flex;
+    flex-direction: row;
+    .mb-base {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .mb-off {
+      justify-content: center;
+      width: 100px;
+      height: 46px;
+      bottom: 46px;
+      // hover移动端不适配
+      // &:hover {
+      //   width: 391px;
+      // }
+    }
+    .mb-mid {
+      justify-content: center;
+      width: 391px;
+      height: 46px;
+      bottom: 46px;
+    }
+    .mb-on {
+      width: 391px;
+      height: 174px; // 4行内容
+      bottom: 174px;
+    }
+    .mb-tip {
+      position: relative;
+      left: 6px;
+      bottom: 46px;
+      width: 100px;
+      height: 46px;
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.6);
+      animation:
+        tip-blink 1.25s ease-in-out 2 1.5s,
+        tip-fade-out 1s ease-in-out 4s forwards;
+      &:hover { 
+        z-index: -1; 
+      }
+      /* 定义平滑的闪烁动画 */
+      @keyframes tip-blink {
+        50% { opacity: 0; }
+        25%, 75% { opacity: 0.5; }
+        0%, 100% { opacity: 1; }
+      }
+      /* 定义平滑的淡出动画 */
+      @keyframes tip-fade-out {
+        0% { opacity: 1; }
+        100% { opacity: 0; }
+      }
+    }
+  }
   @media (max-height: 720px) {
     overflow-y: auto;
     overflow-x: hidden;
@@ -227,6 +294,9 @@ onBeforeUnmount(() => {
       @media (min-width: 391px) {
         left: calc(50% - 25px);
       }
+    }
+    .made-by {
+      top: calc(721px - 46px);
     }
     .f-ter {
       top: 675px; // 721px - 46px
