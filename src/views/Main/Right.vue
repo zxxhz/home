@@ -16,6 +16,7 @@
 import { mainStore } from "@/store";
 import Func from "@/views/Func/index.vue";
 import Link from "@/components/Links.vue";
+
 const store = mainStore();
 
 // 站点链接

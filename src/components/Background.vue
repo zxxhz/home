@@ -106,11 +106,9 @@ onBeforeUnmount(() => {
   height: 100%;
   transition: 0.25s;
   z-index: -1;
-
   &.show {
     z-index: 1;
   }
-
   .bg {
     position: absolute;
     left: 0;

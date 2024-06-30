@@ -46,11 +46,9 @@ const closeShow = ref(false);
   max-width: 50%;
   position: relative;
   animation: fade 0.5s;
-
   &:hover {
     transform: scale(1);
   }
-
   .close,
   .setting {
     position: absolute;
@@ -61,20 +59,16 @@ const closeShow = ref(false);
     transition:
       transform 0.3s,
       opacity 0.3s;
-
     &:hover {
       transform: scale(1.2);
     }
-
     &:active {
       transform: scale(1);
     }
   }
-
   .setting {
     right: 56px;
   }
-
   .content {
     display: flex;
     flex-direction: column;

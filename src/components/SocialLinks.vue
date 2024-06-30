@@ -51,7 +51,6 @@ const socialTip = ref("通过这里联系我吧");
       display: none !important;
     }
   }
-
   .link {
     display: flex;
     align-items: center;

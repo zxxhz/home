@@ -44,6 +44,7 @@
 <script setup>
 import { mainStore } from "@/store";
 import { infos } from "@/utils/updateInfo.js"
+
 const store = mainStore();
 const max = infos.length - 1;
 const cInfo = infos[max];

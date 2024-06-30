@@ -125,7 +125,6 @@ const radioChange = () => {
     --el-collapse-content-bg-color: #ffffff10;
     border-color: transparent;
     overflow: hidden;
-
     :deep(.el-collapse-item__header) {
       background-color: #ffffff30;
       color: #fff;
@@ -133,10 +132,8 @@ const radioChange = () => {
       padding-left: 18px;
       border-color: transparent;
     }
-
     :deep(.el-collapse-item__wrap) {
       border-color: transparent;
-
       .el-collapse-item__content {
         padding: 20px;
         .item {
@@ -162,27 +159,22 @@ const radioChange = () => {
         }
         .el-radio-group {
           justify-content: space-between;
-
           .el-radio {
             margin: 10px 16px;
             background: #ffffff26;
             border: 2px solid transparent;
             border-radius: 8px;
-
             .el-radio__label {
               color: #fff;
             }
-
             .el-radio__inner {
               background: #ffffff06 !important;
               border: 2px solid #eeeeee !important;
             }
-
             &.is-checked {
               background: #ffffff06 !important;
               border: 2px solid #eeeeee !important;
             }
-
             .is-checked {
               .el-radio__inner {
                 background-color: #ffffff30 !important;

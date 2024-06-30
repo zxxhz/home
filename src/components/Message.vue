@@ -104,11 +104,9 @@ watch(
       padding-left: 22px;
       transform: translateY(-8px);
       font-family: "Pacifico-Regular";
-
       .bg {
         font-size: 5rem;
       }
-
       .sm {
         margin-left: 6px;
         font-size: 2rem;
@@ -128,35 +126,29 @@ watch(
         }
       }
     }
-
     @media (max-width: 720px) {
       max-width: 100%;
     }
   }
-
   .description {
     padding: 1rem;
     margin-top: 3.5rem;
     max-width: 460px;
     animation: fade 0.5s;
-
     .content {
       display: flex;
       justify-content: space-between;
-
       .text {
         margin: 0.75rem 1rem;
         line-height: 2rem;
         margin-right: auto;
         transition: opacity 0.2s;
-
         p {
           &:nth-of-type(1) {
             font-family: "Pacifico-Regular";
           }
         }
       }
-
       .xicon:nth-of-type(2) {
         align-self: flex-end;
       }

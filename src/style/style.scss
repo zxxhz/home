@@ -98,7 +98,6 @@ a:hover {
   backdrop-filter: blur(10px);
   border-radius: 25px !important;
   border-color: transparent !important;
-
   .el-message__badge {
     display: none;
   }
@@ -208,11 +207,9 @@ a:hover {
   pointer-events: none;
   transition: 0.2s ease-in-out;
   transition-property: background, opacity, transform;
-
   &.hidden {
     opacity: 0;
   }
-
   &.active {
     opacity: 0.5;
     transform: scale(0.5);

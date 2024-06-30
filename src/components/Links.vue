@@ -142,17 +142,14 @@ onMounted(() => {
       justify-content: center;
       padding: 0 10px;
       animation: fade 0.5s;
-
       &:hover {
         transform: scale(1.02);
         background: rgb(0 0 0 / 40%);
         transition: 0.3s;
       }
-
       &:active {
         transform: scale(1);
       }
-
       .name {
         font-size: 1.1rem;
         margin-left: 8px;

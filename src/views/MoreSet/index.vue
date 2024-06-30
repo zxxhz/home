@@ -101,27 +101,22 @@ const jumpTo = (url) => {
   background: rgb(255 255 255 / 40%);
   border-radius: 6px;
   padding: 40px;
-
   .close {
     position: absolute;
     top: 14px;
     right: 14px;
     width: 28px;
     height: 28px;
-
     &:hover {
       transform: scale(1.2);
     }
-
     &:active {
       transform: scale(1);
     }
   }
-
   .el-row {
     height: 100%;
     flex-wrap: nowrap;
-
     .left {
       height: 100%;
       padding-left: 40px !important;
@@ -129,7 +124,6 @@ const jumpTo = (url) => {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-
       .logo {
         transform: translateY(-8%);
         font-family: "Pacifico-Regular";
@@ -140,12 +134,10 @@ const jumpTo = (url) => {
         .bg {
           font-size: 5rem;
         }
-
         .sm {
           margin-left: 6px;
           font-size: 2rem;
         }
-
         @media (max-width: 990px) {
           .bg {
             font-size: 4.5rem;
@@ -163,51 +155,41 @@ const jumpTo = (url) => {
           }
         }
       }
-
       .version {
         display: flex;
         flex-direction: row;
         align-items: center;
-
         .num {
           font-size: 2rem;
           font-family: "Pacifico-Regular";
         }
-
         .github {
           width: 24px;
           height: 24px;
           margin-left: 12px;
           margin-top: 6px;
-
           &:hover {
             transform: scale(1.2);
           }
         }
       }
-
       .update {
         margin-top: 30px;
         height: 100%;
-
         :deep(.el-card__body) {
           height: 100%;
-
           .upnote {
             padding: 20px;
             height: calc(100% - 56px);
             overflow-y: auto;
-
             .uptext {
               display: flex;
               flex-direction: row;
               align-items: center;
               padding-bottom: 16px;
-
               &:nth-last-of-type(1) {
                 padding: 0;
               }
-
               .i-icon {
                 width: 22px;
                 height: 22px;
@@ -218,21 +200,18 @@ const jumpTo = (url) => {
         }
       }
     }
-
     .right {
       height: 100%;
       padding-right: 40px !important;
       display: flex;
       flex-direction: column;
       justify-content: center;
-
       .title {
         display: flex;
         align-items: center;
         flex-direction: row;
         font-size: 18px;
         margin-bottom: 16px;
-
         .i-icon {
           width: 28px;
           height: 28px;

@@ -30,6 +30,7 @@
 import { HourglassFull } from "@icon-park/vue-next";
 import { getTimeCapsule, siteDateStatistics } from "@/utils/getTime.js";
 import { mainStore } from "@/store";
+
 const store = mainStore();
 
 // 进度条数据

@@ -50,7 +50,6 @@ const siteName = import.meta.env.VITE_SITE_NAME;
       border-top-color: #fff;
       animation: spin 1.8s linear infinite;
       z-index: 2;
-
       &:before {
         content: "";
         position: absolute;
@@ -63,7 +62,6 @@ const siteName = import.meta.env.VITE_SITE_NAME;
         border-top-color: #a4a4a4;
         animation: spin-reverse 0.6s linear infinite;
       }
-
       &:after {
         content: "";
         position: absolute;
