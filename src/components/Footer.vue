@@ -3,7 +3,7 @@
     <Transition name="fade" mode="out-in">
       <div v-if="!store.playerState || !store.playerLrcShow" class="power">
         <span>
-          <span :class="startYear < fullYear ? 'c-hidden' : 'hidden'">Copyright&nbsp;</span>
+          <span :class="startYear < fullYear ? 'c-hidden' : 'hidden'">Copyright</span>
           &copy;
           <span v-if="startYear < fullYear"
             class="site-start">
@@ -22,9 +22,20 @@
           </a>
         </span> -->
         <!-- 站点备案 -->
-        <span>
-          &nbsp;|&nbsp;
-          <a v-if="siteIcp" href="https://beian.miit.gov.cn" target="_blank">
+        <span v-if="siteIcp || siteNet">
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <!-- 公网安备案 -->
+          <span v-if="siteNet">
+            <img src="/备案图标.png" class="net" />
+            <span>&nbsp;</span>
+            <a href="https://beian.mps.gov.cn/#/query/webSearch?code=34010402704171" rel="noreferrer" target="_blank">
+              {{ siteNet }}
+            </a>
+            <!-- &amp; -->
+            &nbsp;
+          </span>
+          <!-- ICP备案 -->
+          <a href="https://beian.miit.gov.cn" target="_blank">
             {{ siteIcp }}
           </a>
         </span>
@@ -57,6 +68,7 @@ const startYear = ref(
   import.meta.env.VITE_SITE_START.substring(0, 4) : null
 );
 const siteIcp = ref(import.meta.env.VITE_SITE_ICP);
+const siteNet = ref(import.meta.env.VITE_SITE_NET);
 const siteAuthor = ref(import.meta.env.VITE_SITE_AUTHOR);
 const siteUrl = computed(() => {
   const url = import.meta.env.VITE_SITE_URL;
@@ -85,6 +97,11 @@ const siteUrl = computed(() => {
   white-space: nowrap;
   .power {
     animation: fade 0.3s;
+    .net {
+      padding-bottom: 4px;
+      vertical-align: middle;
+      width: 1.2rem;
+    }
   }
   .lrc {
     padding: 0 20px;
@@ -122,15 +139,40 @@ const siteUrl = computed(() => {
     &.blur {
       font-size: 0.9rem;
     }
+    .power .net {
+      width: 1rem;
+    }
+  }
+  @media (max-width: 650px) {
+    font-size: 0.75rem;
+    &.blur {
+      font-size: 0.75rem;
+    }
+    .power .net {
+      width: 0.8rem;
+    }
   }
   @media (max-width: 560px) {
     .c-hidden {
       display: none;
     }
+    &.blur {
+      font-size: 0.7rem;
+    }
+    .power .net {
+      width: 0.75rem;
+    }
   }
   @media (max-width: 480px) {
     .hidden {
       display: none;
+    }
+    font-size: 0.6rem;
+    &.blur {
+      font-size: 0.6rem;
+    }
+    .power .net {
+      width: 0.7rem;
     }
   }
 }

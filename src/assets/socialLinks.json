@@ -18,12 +18,6 @@
     "url": "https://res.abeim.cn/api/qq/?qq=1147347215"
   },
   {
-    "name": "QQGroup",
-    "icon": "/images/icon/qqgroup.png",
-    "tip": "交个朋友 ~",
-    "url": "http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=hDauSVUtqvTsmgIZegRO8mlgGrSk_hs4&authKey=zid1sB722czefIrYa%2FmNAngPhoKKY6eZTWBCjHrZh0jtb4ZtxVynyGsc%2FeD11DxB&noverify=0&group_code=620632028"
-  },
-  {
     "name": "Email",
     "icon": "/images/icon/email.png",
     "tip": "来封 Email ~",

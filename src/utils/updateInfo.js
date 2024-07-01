@@ -38,7 +38,7 @@ const iamlzlHome = {
   "home": "https://imlzl.cn",
   "homeName": "李宗霖的主页",
   "project": "home",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "github": "https://github.com/supine0703/home",
   "logo": `
  _____   __   __  __ _     _____ _
