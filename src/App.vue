@@ -140,6 +140,7 @@ onBeforeUnmount(() => {
   left: 0;
   width: 100%;
   height: 100vh;
+  overflow-x: hidden; // 防止横向滚动
   
   .container {
     width: 100%;
@@ -158,7 +159,9 @@ onBeforeUnmount(() => {
       @media (max-width: 720px) {
         flex-direction: column;
         justify-content: flex-start;
-        padding-top: 20px;
+        padding: 1rem 0;
+        height: auto;
+        min-height: 100%;
       }
     }
   }

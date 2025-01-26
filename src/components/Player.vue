@@ -284,5 +284,39 @@ defineExpose({ playToggle, changeVolume, changeSong, toggleList });
       }
     }
   }
+  @media (max-width: 720px) {
+    width: 90%;
+    
+    :deep(.aplayer-body) {
+      .aplayer-info {
+        .aplayer-music {
+          .aplayer-title {
+            font-size: 14px;
+          }
+          .aplayer-author {
+            font-size: 12px;
+          }
+        }
+        
+        .aplayer-lrc {
+          height: 36px;
+          margin: 5px 0 4px 4px;
+          
+          .aplayer-lrc-current {
+            font-size: 0.85rem;
+          }
+        }
+      }
+    }
+    
+    :deep(.aplayer-list) {
+      max-height: 300px;
+      
+      li {
+        padding: 8px;
+        font-size: 13px;
+      }
+    }
+  }
 }
 </style>

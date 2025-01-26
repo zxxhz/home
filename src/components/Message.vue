@@ -128,6 +128,20 @@ watch(
     }
     @media (max-width: 720px) {
       max-width: 100%;
+      padding: 0 1rem;
+      
+      .logo-img {
+        width: 80px;
+      }
+      
+      .name {
+        .bg {
+          font-size: 3rem;
+        }
+        .sm {
+          font-size: 1.5rem;
+        }
+      }
     }
   }
   .description {
@@ -154,8 +168,9 @@ watch(
       }
     }
     @media (max-width: 720px) {
+      margin-top: 2rem;
+      padding: 0.75rem;
       max-width: 100%;
-      pointer-events: none;
     }
   }
   // @media (max-width: 390px) {

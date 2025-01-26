@@ -54,6 +54,29 @@ onBeforeUnmount(() => {
 <style lang="scss" scoped>
 .time-capsule {
   width: 100%;
+  @media (max-width: 720px) {
+    padding: 0 1rem;
+    
+    .title {
+      margin: 0.2rem 0 1rem;
+      font-size: 1rem;
+    }
+    
+    .all-capsule {
+      .capsule-item {
+        margin-bottom: 0.8rem;
+        
+        .item-title {
+          margin: 0.8rem 0 0.4rem;
+          font-size: 0.9rem;
+          
+          .remaining {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
   .title {
     display: flex;
     flex-direction: row;

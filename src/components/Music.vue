@@ -156,6 +156,21 @@ watch(
   align-items: center;
   flex-direction: column;
   animation: fade 0.5s;
+  @media (max-width: 720px) {
+    padding: 15px;
+    
+    .control {
+      .state {
+        transform: scale(0.9);
+      }
+    }
+    
+    .menu {
+      .name {
+        font-size: 0.9rem;
+      }
+    }
+  }
   .btns {
     display: flex;
     align-items: center;
@@ -260,6 +275,7 @@ watch(
   background-color: #00000080;
   backdrop-filter: blur(20px);
   z-index: 1;
+  
   .list {
     position: absolute;
     display: flex;
@@ -272,10 +288,16 @@ watch(
     background-color: #ffffff66;
     border-radius: 6px;
     z-index: 999;
+    
     @media (max-width: 720px) {
-      left: calc(50% - 45%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       width: 90%;
+      height: 80vh;
+      max-height: 600px;
     }
+    
     .close {
       position: absolute;
       top: 12px;
@@ -283,6 +305,14 @@ watch(
       width: 28px;
       height: 28px;
       display: block;
+      
+      @media (max-width: 720px) {
+        top: 8px;
+        right: 8px;
+        width: 24px;
+        height: 24px;
+      }
+      
       &:hover {
         transform: scale(1.2);
       }

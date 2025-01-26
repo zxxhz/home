@@ -164,6 +164,12 @@ onBeforeUnmount(() => {
     &:active {
       transform: scale(1);
     }
+    @media (max-width: 720px) {
+      font-size: 14px;
+      padding: 15px 20px;
+      bottom: 20px;
+      width: 100px;
+    }
   }
 }
 </style>

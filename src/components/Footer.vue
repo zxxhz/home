@@ -92,48 +92,9 @@ const siteUrl = computed(() => {
   text-align: center;
   z-index: 0;
   font-size: 14px;
-  // 文字不换行
   word-break: keep-all;
   white-space: nowrap;
-  .power {
-    animation: fade 0.3s;
-    .net {
-      padding-bottom: 4px;
-      vertical-align: middle;
-      width: 1.2rem;
-    }
-  }
-  .lrc {
-    padding: 0 20px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    .lrc-all {
-      width: 98%;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      .lrc-text {
-        margin: 0 8px;
-      }
-      .i-icon {
-        width: 18px;
-        height: 18px;
-        display: inherit;
-      }
-    }
-  }
-  &.blur {
-    backdrop-filter: blur(10px);
-    background: rgb(0 0 0 / 25%);
-    font-size: 16px;
-  }
-  .fade-enter-active,
-  .fade-leave-active {
-    transition: opacity 0.15s ease-in-out;
-  }
+  
   @media (max-width: 720px) {
     font-size: 0.9rem;
     &.blur {
@@ -142,27 +103,18 @@ const siteUrl = computed(() => {
     .power .net {
       width: 1rem;
     }
-  }
-  @media (max-width: 650px) {
-    font-size: 0.75rem;
-    &.blur {
-      font-size: 0.75rem;
-    }
-    .power .net {
-      width: 0.8rem;
-    }
-  }
-  @media (max-width: 560px) {
-    .c-hidden {
-      display: none;
-    }
-    &.blur {
-      font-size: 0.7rem;
-    }
-    .power .net {
-      width: 0.75rem;
+    
+    .lrc {
+      padding: 0 10px;
+      .lrc-all {
+        .lrc-text {
+          font-size: 0.9rem;
+          margin: 0 6px;
+        }
+      }
     }
   }
+  
   @media (max-width: 480px) {
     .hidden {
       display: none;

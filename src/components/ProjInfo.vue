@@ -93,5 +93,23 @@ const cInfo = infos[max];
   .tb-on {
     font-size: 16px;
   }
+  @media (max-width: 720px) {
+    .tb-on {
+      font-size: 14px;
+      
+      th, td {
+        padding: 6px;
+      }
+    }
+    
+    // 折叠状态下的样式
+    div:not(.tb-on) {
+      font-size: 16px;
+      
+      table td {
+        padding: 6px 4px;
+      }
+    }
+  }
 }
 </style>

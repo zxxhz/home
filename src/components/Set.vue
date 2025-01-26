@@ -189,6 +189,28 @@ const radioChange = () => {
         }
       }
     }
+    @media (max-width: 720px) {
+      :deep(.el-collapse-item__header) {
+        font-size: 14px;
+        padding-left: 12px;
+      }
+      
+      :deep(.el-collapse-item__content) {
+        padding: 15px;
+        
+        .item {
+          font-size: 13px;
+          margin-bottom: 10px;
+          
+          .el-radio-group {
+            .el-radio {
+              margin: 8px;
+              padding: 8px 12px;
+            }
+          }
+        }
+      }
+    }
   }
 }
 </style>

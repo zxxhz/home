@@ -112,3 +112,16 @@ onMounted(() => {
   getWeatherData();
 });
 </script>
+
+<style scoped>
+@media (max-width: 720px) {
+  .weather {
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+  }
+  
+  .weather .sm-hidden {
+    display: none; 
+  }
+}
+</style>

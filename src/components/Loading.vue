@@ -128,6 +128,23 @@ const siteName = import.meta.env.VITE_SITE_NAME;
       }
     }
   }
+  @media (max-width: 720px) {
+    .loader {
+      .loader-circle {
+        width: 120px;
+        height: 120px;
+      }
+      
+      .loader-text {
+        margin-top: 30px;
+        font-size: 20px;
+        
+        .tip {
+          font-size: 16px;
+        }
+      }
+    }
+  }
 }
 
 @keyframes spin {

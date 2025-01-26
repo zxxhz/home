@@ -160,14 +160,12 @@ onMounted(() => {
         }
       }
       @media (max-width: 720px) {
-        height: 80px;
-      }
-      @media (max-width: 460px) {
-        flex-direction: column;
-        .name {
-          font-size: 1rem;
-          margin-left: 0;
-          margin-top: 8px;
+        height: auto;
+        padding: 0 1rem;
+        
+        .item {
+          height: 70px;
+          margin-bottom: 1rem;
         }
       }
     }

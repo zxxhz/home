@@ -82,6 +82,9 @@ onMounted(() => {
   height: 100%;
   padding: 20px;
   animation: fade 0.5s;
+  @media (max-width: 720px) {
+    padding: 15px;
+  }
   .open-music {
     width: 100%;
     position: absolute;
@@ -115,13 +118,20 @@ onMounted(() => {
       overflow: hidden;
       display: -webkit-box;
       -webkit-line-clamp: 3;
+      line-clamp: 3;
       -webkit-box-orient: vertical;
+      @media (max-width: 720px) {
+        font-size: 1rem;
+      }
     }
     .from {
       margin-top: 10px;
       font-weight: bold;
       align-self: flex-end;
       font-size: 1.1rem;
+      @media (max-width: 720px) {
+        font-size: 0.9rem;
+      }
     }
   }
 }
