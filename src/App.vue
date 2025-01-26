@@ -162,15 +162,29 @@ onBeforeUnmount(() => {
         padding: 1rem 0;
         height: auto;
         min-height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
       }
     }
+    
+    .more {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      z-index: 998;
+      animation: fade 0.2s;
+    }
   }
-
+  
   .menu {
     position: fixed;
     z-index: 2;
   }
-
+  
   .f-ter {
     position: fixed;
     bottom: 0;
