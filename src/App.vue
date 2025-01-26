@@ -140,7 +140,7 @@ onBeforeUnmount(() => {
   left: 0;
   width: 100%;
   height: 100vh;
-  overflow-x: hidden; // 防止横向滚动
+  overflow-x: hidden;
   
   .container {
     width: 100%;
@@ -158,12 +158,18 @@ onBeforeUnmount(() => {
       
       @media (max-width: 720px) {
         flex-direction: column;
-        justify-content: flex-start;
-        padding: 1rem 0;
-        height: auto;
-        min-height: 100%;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2rem 0;
+        height: 100vh;
         overflow-y: auto;
-        overflow-x: hidden;
+        
+        // 调整子元素布局
+        > * {
+          width: 100%;
+          max-width: 100%;
+          margin: 1rem 0;
+        }
       }
     }
     
@@ -176,7 +182,10 @@ onBeforeUnmount(() => {
       background: rgba(0, 0, 0, 0.5);
       backdrop-filter: blur(10px);
       z-index: 998;
-      animation: fade 0.2s;
+      
+      @media (max-width: 720px) {
+        overflow-y: auto;
+      }
     }
   }
   
