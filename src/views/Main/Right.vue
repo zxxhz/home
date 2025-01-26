@@ -36,13 +36,23 @@ const siteUrl = computed(() => {
 .right {
   width: 50%;
   margin-left: 0.75rem;
+  transition: all 0.3s;
   
   @media (max-width: 720px) {
-    width: 100%;
-    margin-left: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 66%;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    z-index: 999;
+    transform: translateX(0);
     
     &.hidden {
-      display: none;
+      transform: translateX(100%);
     }
   }
   
