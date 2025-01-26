@@ -159,16 +159,14 @@ onBeforeUnmount(() => {
       @media (max-width: 720px) {
         flex-direction: column;
         align-items: center;
-        justify-content: space-between;
-        padding: 2rem 0;
+        justify-content: center;
         height: 100vh;
-        overflow-y: auto;
         
-        // 调整子元素布局
         > * {
+          transform: scale(0.9);
           width: 100%;
-          max-width: 100%;
-          margin: 1rem 0;
+          max-width: 400px;
+          margin: 0.5rem 0;
         }
       }
     }
@@ -182,10 +180,6 @@ onBeforeUnmount(() => {
       background: rgba(0, 0, 0, 0.5);
       backdrop-filter: blur(10px);
       z-index: 998;
-      
-      @media (max-width: 720px) {
-        overflow-y: auto;
-      }
     }
   }
   
