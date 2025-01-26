@@ -139,186 +139,39 @@ onBeforeUnmount(() => {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  transform: scale(1.2);
-  transition: transform 0.3s;
-  animation: fade-blur-main-in 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-  animation-delay: 0.5s;
+  height: 100vh;
+  
   .container {
     width: 100%;
-    height: 100vh;
+    max-width: 1200px;
+    height: 100%;
     margin: 0 auto;
-    padding: 0 0.5vw;
+    padding: 0 20px;
+    box-sizing: border-box;
+    
     .all {
-      width: 100%;
+      width: 100%; 
       height: 100%;
-      padding: 0 0.75rem;
       display: flex;
-      flex-direction: row;
-      justify-content: center;
       align-items: center;
-    }
-    .more {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #00000080;
-      backdrop-filter: blur(20px);
-      z-index: 2;
-      animation: fade 0.5s;
-    }
-    @media (max-width: 1200px) {
-      padding: 0 2vw;
+      
+      @media (max-width: 720px) {
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 20px;
+      }
     }
   }
+
   .menu {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 84%;
-    left: calc(50% - 28px);
-    width: 56px;
-    height: 34px;
-    background: rgb(0 0 0 / 20%);
-    backdrop-filter: blur(10px);
-    border-radius: 6px;
-    transition: transform 0.3s;
-    animation: fade 0.5s;
-    &:active {
-      transform: scale(0.95);
-    }
-    .i-icon {
-      transform: translateY(2px);
-    }
-    @media (min-width: 721px) {
-      display: none;
-    }
+    position: fixed;
+    z-index: 2;
   }
-  .made-by {
-    position: absolute;
-    top: calc(100% - 46px);
-    display: flex;
-    flex-direction: row;
-    .mb-base {
-      position: relative;
-      display: flex;
-      align-items: center;
-    }
-    .mb-off {
-      justify-content: center;
-      width: 100px;
-      height: 46px;
-      bottom: 46px;
-      // hover移动端不适配
-      // &:hover {
-      //   width: 391px;
-      // }
-    }
-    .mb-mid {
-      justify-content: center;
-      width: 391px;
-      height: 46px;
-      bottom: 46px;
-    }
-    .mb-on {
-      width: 391px;
-      height: 174px; // 4行内容
-      bottom: 174px;
-    }
-    .mb-tip {
-      position: relative;
-      left: 6px;
-      bottom: 46px;
-      width: 100px;
-      height: 46px;
-      display: flex;
-      align-items: center;
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.6);
-      animation:
-        tip-blink 1.25s ease-in-out 2 1.5s,
-        tip-fade-out 1s ease-in-out 4s forwards;
-      &:hover { 
-        z-index: -1; 
-      }
-      /* 定义平滑的闪烁动画 */
-      @keyframes tip-blink {
-        50% { opacity: 0; }
-        25%, 75% { opacity: 0.5; }
-        0%, 100% { opacity: 1; }
-      }
-      /* 定义平滑的淡出动画 */
-      @keyframes tip-fade-out {
-        0% { opacity: 1; }
-        100% { opacity: 0; }
-      }
-    }
-  }
-  @media (max-height: 720px) {
-    overflow-y: auto;
-    overflow-x: hidden;
-    .container {
-      height: 721px;
-      .more {
-        height: 721px;
-        width: calc(100% + 6px);
-      }
-      @media (min-width: 391px) {
-        // w 1201px ~ max
-        padding-left: 0.7vw;
-        padding-right: 0.25vw;
-        @media (max-width: 1200px) { // w 1101px ~ 1280px
-          padding-left: 2.3vw;
-          padding-right: 1.75vw;
-        }
-        @media (max-width: 1100px) { // w 993px ~ 1100px
-          padding-left: 2vw;
-          padding-right: calc(2vw - 6px);
-        }
-        @media (max-width: 992px) { // w 901px ~ 992px
-          padding-left: 2.3vw;
-          padding-right: 1.7vw;
-        }
-        @media (max-width: 900px) { // w 391px ~ 900px
-          padding-left: 2vw;
-          padding-right: calc(2vw - 6px);
-        }
-      }
-    }
-    .menu {
-      top: 605.64px; // 721px * 0.84
-      left: 170.5px; // 391 * 0.5 - 25px
-      @media (min-width: 391px) {
-        left: calc(50% - 25px);
-      }
-    }
-    .made-by {
-      top: calc(721px - 46px);
-    }
-    .f-ter {
-      top: 675px; // 721px - 46px
-      @media (min-width: 391px) {
-        padding-left: 6px;
-      }
-    }
-  }
-  @media (max-width: 390px) {
-    overflow-x: auto;
-    .container {
-      width: 391px;
-    }
-    .menu {
-      left: 167.5px; // 391px * 0.5 - 28px
-    }
-    .f-ter {
-      width: 391px;
-    }
-    @media (min-height: 721px) {
-      overflow-y: hidden;
-    }
+
+  .f-ter {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
   }
 }
 </style>
